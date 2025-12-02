@@ -1,7 +1,7 @@
 package com;
 
 import com.solutions.year2025.day1.Day01;
-import com.solutions.year2025.Day02;
+import com.solutions.year2025.day2.Day02;
 
 import java.util.function.Supplier;
 
