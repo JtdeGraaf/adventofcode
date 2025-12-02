@@ -49,8 +49,39 @@ public class Day02 extends Solution {
 
     @Override
     public String solvePart2() {
-        // TODO: Implement part 2 solution
-        return "Part 2 not implemented yet";
+        List<String> idRangeStrings = List.of(this.lines[0].split(","));
+        List<Pair<String, String>> idRanges = idRangeStrings.stream().map(rangeStr -> {
+            String[] splitIds = rangeStr.split("-");
+
+            // Strip leading zeros from ids
+            String startId = StringUtils.stripStart(splitIds[0], "0").trim();
+            String endId = StringUtils.stripStart(splitIds[1], "0").trim();
+            return Pair.of(startId, endId);
+        }).toList();
+
+        Long sumOfInvalidIds = 0L;
+
+
+        for (Pair<String, String> idRange : idRanges) {
+            Long startId = Long.parseLong(idRange.getLeft());
+            Long endId = Long.parseLong(idRange.getRight());
+
+            for (Long id = startId; id <= endId; id++) {
+                String stringId = String.valueOf(id);
+
+                // What the fuck is a regex right?
+                for (int j = 0; j < stringId.length() / 2; j++) {
+                    String sub1 = stringId.substring(0, j + 1);
+                    // If it only contains empty strings, then the id only contains repeats of sub1
+                    if (StringUtils.isAllEmpty(stringId.split(sub1))) {
+                        sumOfInvalidIds += id;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return String.valueOf(sumOfInvalidIds);
     }
 }
 
