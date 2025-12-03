@@ -2,6 +2,7 @@ package com;
 
 import com.solutions.year2025.day1.Day01;
 import com.solutions.year2025.day2.Day02;
+import com.solutions.year2025.day3.Day03;
 
 import java.util.function.Supplier;
 
@@ -10,7 +11,8 @@ import java.util.function.Supplier;
  */
 public enum SolutionRegistry {
     YEAR2025_DAY01(2025, 1, Day01::new),
-    YEAR2025_DAY02(2025, 2, Day02::new);
+    YEAR2025_DAY02(2025, 2, Day02::new),
+    YEAR2025_DAY03(2025, 3, Day03::new);
 
     private final int year;
     private final int day;
