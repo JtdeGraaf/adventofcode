@@ -5,6 +5,7 @@ import com.solutions.year2025.day2.Day02;
 import com.solutions.year2025.day3.Day03;
 import com.solutions.year2025.day4.Day04;
 import com.solutions.year2025.day5.Day05;
+import com.solutions.year2025.day6.Day06;
 
 import java.util.function.Supplier;
 
@@ -16,7 +17,8 @@ public enum SolutionRegistry {
     YEAR2025_DAY02(2025, 2, Day02::new),
     YEAR2025_DAY03(2025, 3, Day03::new),
     YEAR2025_DAY04(2025, 4, Day04::new),
-    YEAR2025_DAY05(2025, 5, Day05::new);
+    YEAR2025_DAY05(2025, 5, Day05::new),
+    YEAR2025_DAY06(2025, 6, Day06::new);
 
     private final int year;
     private final int day;
