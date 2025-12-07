@@ -21,6 +21,8 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.20.0</version>
         </dependency>
+
+        <!-- Removed JLine dependency to avoid extra external dependencies; using a minimal built-in menu instead -->
     </dependencies>
 
 </project>
